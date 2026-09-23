@@ -1,0 +1,10 @@
+{
+  "name": "Remix Boalkhali.com",
+  "description": "Local information, services, directory and community platform for Boalkhali, Chattogram, Bangladesh with dynamic admin management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
