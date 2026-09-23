@@ -47,7 +47,7 @@ export const AdminPostsPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 max-w-5xl">
+    <div className="space-y-6 max-w-7xl">
       {/* Top Banner */}
       <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-xs flex items-center justify-between">
         <div>

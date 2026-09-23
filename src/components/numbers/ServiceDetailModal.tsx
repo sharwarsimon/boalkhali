@@ -146,27 +146,27 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ item, on
               >
                 <div className="space-y-1 min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="font-bold text-sm sm:text-base text-[#050505] leading-snug">
+                    <h3 className="font-bold text-base sm:text-lg text-[#050505] leading-snug">
                       {contact.label}
                     </h3>
                     {contact.available24h && (
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full shrink-0">
-                        <Clock className="w-3 h-3" />
+                      <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full shrink-0">
+                        <Clock className="w-3.5 h-3.5" />
                         <span>২৪ ঘণ্টা</span>
                       </span>
                     )}
                   </div>
 
                   {contact.designation && (
-                    <p className="text-xs font-semibold text-[#65676B]">
+                    <p className="text-xs sm:text-sm font-semibold text-[#65676B]">
                       {contact.designation}
                     </p>
                   )}
 
-                  <div className="flex items-center gap-3 text-[11px] text-[#65676B] flex-wrap pt-0.5">
+                  <div className="flex items-center gap-3 text-xs text-[#65676B] flex-wrap pt-0.5">
                     {contact.location && (
                       <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-red-500 shrink-0" />
+                        <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0" />
                         <span>{contact.location}</span>
                       </span>
                     )}
@@ -179,8 +179,8 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ item, on
 
                   {/* নম্বর নিচে পরিষ্কারভাবে প্রদর্শন */}
                   <div className="pt-1">
-                    <span className="font-mono font-bold text-xs sm:text-sm text-[#1877F2] bg-blue-50 px-2.5 py-1 rounded-xl border border-blue-100 inline-block">
-                      {contact.phone}
+                    <span className="font-mono font-bold text-sm sm:text-base text-[#1877F2] bg-blue-50 px-3 py-1 rounded-xl border border-blue-100 inline-flex items-center gap-1.5">
+                      📞 {contact.phone}
                     </span>
                   </div>
                 </div>
@@ -190,22 +190,22 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({ item, on
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={() => handleCopy(contact.phone, contact.label)}
-                      className="p-2 bg-gray-100 hover:bg-gray-200 rounded-xl text-gray-700 cursor-pointer transition-colors"
+                      className="p-2.5 bg-gray-100 hover:bg-gray-200 rounded-xl text-gray-700 cursor-pointer transition-colors"
                       title="নম্বর কপি করুন"
                     >
                       {copiedPhone === contact.phone ? (
-                        <Check className="w-4 h-4 text-emerald-600" />
+                        <Check className="w-4.5 h-4.5 text-emerald-600" />
                       ) : (
-                        <Copy className="w-4 h-4" />
+                        <Copy className="w-4.5 h-4.5" />
                       )}
                     </button>
                   </div>
 
                   <a
                     href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}
-                    className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-2xs transition-transform active:scale-95 cursor-pointer"
+                    className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-2xs transition-transform active:scale-95 cursor-pointer"
                   >
-                    <Phone className="w-3.5 h-3.5 fill-current" />
+                    <Phone className="w-4 h-4 fill-current" />
                     <span>কল দিন</span>
                   </a>
                 </div>

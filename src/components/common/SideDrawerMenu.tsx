@@ -252,7 +252,7 @@ export const SideDrawerMenu: React.FC<SideDrawerMenuProps> = ({ navigate }) => {
     >
       {/* Top Header Bar */}
       <header className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-[#E4E6EB] px-4 sm:px-6 py-3 shadow-2xs">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo and Tagline */}
           <div 
             onClick={() => handleNav('/')}
@@ -275,7 +275,7 @@ export const SideDrawerMenu: React.FC<SideDrawerMenuProps> = ({ navigate }) => {
       </header>
 
       {/* Main Content Area - Full Open Display */}
-      <main className="flex-1 w-full max-w-5xl mx-auto p-4 sm:p-6 md:p-8 space-y-5">
+      <main className="flex-1 w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 space-y-5">
         {/* ১. উপজেলা তথ্য হাব */}
         <section className="bg-white rounded-3xl p-5 sm:p-7 border border-[#E4E6EB] shadow-2xs space-y-5">
           {/* Hub Title and Subtitle matching UpazilaInfoHubGrid */}

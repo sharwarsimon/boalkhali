@@ -63,7 +63,7 @@ export const BoalkhaliHeroSlider: React.FC<BoalkhaliHeroSliderProps> = ({ naviga
     >
       {/* Main Slide Carousel Container */}
       <div 
-        className="relative w-full h-48 xs:h-56 sm:h-64 md:h-72 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none group"
+        className="relative w-full h-52 xs:h-60 sm:h-72 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer select-none group"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onClick={() => navigate(currentSlide.linkAction)}
@@ -88,15 +88,15 @@ export const BoalkhaliHeroSlider: React.FC<BoalkhaliHeroSliderProps> = ({ naviga
         ))}
 
         {/* Minimal Text Overlay: strictly NO bulky paragraphs */}
-        <div className="absolute inset-0 z-20 p-3.5 sm:p-5 flex flex-col justify-between text-white pointer-events-none">
+        <div className="absolute inset-0 z-20 p-4 sm:p-6 md:p-8 flex flex-col justify-between text-white pointer-events-none">
           {/* Top Tag & Slide Indicators & Badge */}
           <div className="flex items-center justify-between">
-            <span className="bg-[#0F4A2E] text-[#F39C12] border border-[#F39C12]/40 text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full shadow-xs">
+            <span className="bg-[#0F4A2E] text-[#F39C12] border border-[#F39C12]/40 text-xs sm:text-sm font-bold px-3 py-1 rounded-full shadow-xs">
               {currentSlide.tag}
             </span>
 
             {/* Slide Dots inside banner */}
-            <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-2.5 py-1 rounded-full pointer-events-auto">
+            <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-3 py-1.5 rounded-full pointer-events-auto">
               {slides.map((_, idx) => (
                 <button
                   key={idx}
@@ -105,7 +105,7 @@ export const BoalkhaliHeroSlider: React.FC<BoalkhaliHeroSliderProps> = ({ naviga
                     setCurrentIndex(idx);
                   }}
                   className={`h-1.5 transition-all rounded-full cursor-pointer ${
-                    currentIndex === idx ? 'w-4 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80'
+                    currentIndex === idx ? 'w-5 bg-white' : 'w-1.5 bg-white/50 hover:bg-white/80'
                   }`}
                   aria-label={`Slide ${idx + 1}`}
                 />
@@ -113,16 +113,16 @@ export const BoalkhaliHeroSlider: React.FC<BoalkhaliHeroSliderProps> = ({ naviga
             </div>
 
             {currentSlide.badge && (
-              <span className="bg-[#EA580C] text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full shadow-xs">
+              <span className="bg-[#EA580C] text-white text-[10px] sm:text-xs font-black px-2.5 py-0.5 rounded-full shadow-xs">
                 {currentSlide.badge}
               </span>
             )}
           </div>
 
           {/* Bottom Title & Action Chip - Concise! */}
-          <div className="flex items-end justify-between gap-3">
+          <div className="flex items-end justify-between gap-4">
             <div className="max-w-[75%]">
-              <h3 className="text-sm sm:text-lg md:text-xl font-black text-white leading-snug drop-shadow-md">
+              <h3 className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-white leading-snug drop-shadow-md">
                 {currentSlide.title}
               </h3>
             </div>
@@ -133,10 +133,10 @@ export const BoalkhaliHeroSlider: React.FC<BoalkhaliHeroSliderProps> = ({ naviga
                   e.stopPropagation();
                   navigate(currentSlide.linkAction);
                 }}
-                className="bg-white/95 hover:bg-white text-[#0F4A2E] hover:text-[#EA580C] text-[11px] sm:text-xs font-black px-3 py-1.5 rounded-xl shadow-md flex items-center gap-1 transition-all group-hover:scale-105 cursor-pointer"
+                className="bg-white/95 hover:bg-white text-[#0F4A2E] hover:text-[#EA580C] text-xs sm:text-sm font-black px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl shadow-md flex items-center gap-1.5 transition-all group-hover:scale-105 cursor-pointer"
               >
                 <span>{currentSlide.linkText || 'দেখুন'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>

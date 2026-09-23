@@ -25,7 +25,7 @@ export const FloatingCartButton: React.FC = () => {
         <ShoppingBag className="w-5 h-5 sm:w-5.5 sm:h-5.5 transition-transform group-hover:scale-110" />
 
         {/* Label / Price */}
-        <span className="text-[10px] font-bold mt-1 tracking-tight whitespace-nowrap">
+        <span className="text-xs font-bold mt-1 tracking-tight whitespace-nowrap">
           {cartCount > 0 ? `৳${cartTotal}` : 'কার্ট'}
         </span>
 

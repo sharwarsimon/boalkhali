@@ -232,7 +232,7 @@ const AppContent: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col justify-between bg-[#F0F2F5] pb-4">
         <Header currentPath={path} navigate={navigate} />
-        <main className="flex-1 min-w-0 max-w-5xl mx-auto w-full px-2 sm:px-4 py-3">
+        <main className="flex-1 min-w-0 max-w-7xl mx-auto w-full px-3 sm:px-6 lg:px-8 py-4">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={basePath}
@@ -256,23 +256,23 @@ const AppContent: React.FC = () => {
     <>
       {renderRoute()}
 
-      {/* Global Toast Notification System (Top Right, Compact, Low Opacity) */}
-      <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50 flex flex-col gap-1.5 pointer-events-none max-w-xs">
+      {/* Global Toast Notification System */}
+      <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50 flex flex-col gap-2 pointer-events-none w-[calc(100%-1.5rem)] sm:w-auto max-w-sm">
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className={`pointer-events-auto py-1.5 px-2.5 rounded-lg shadow-md border flex items-center justify-between gap-2 text-[11px] font-medium text-white transition-all opacity-85 hover:opacity-100 backdrop-blur-xs animate-in fade-in slide-in-from-top-2 duration-150 ${
+            className={`pointer-events-auto py-2 px-3 sm:px-3.5 rounded-xl shadow-md border flex items-center justify-between gap-2.5 text-xs sm:text-sm font-medium text-white transition-all opacity-90 hover:opacity-100 backdrop-blur-xs animate-in fade-in slide-in-from-top-2 duration-150 ${
               toast.type === 'success'
-                ? 'bg-emerald-700/85 border-emerald-500/40'
+                ? 'bg-emerald-700/90 border-emerald-500/40'
                 : toast.type === 'error'
-                ? 'bg-red-700/85 border-red-500/40'
-                : 'bg-[#1877F2]/85 border-blue-400/40'
+                ? 'bg-red-700/90 border-red-500/40'
+                : 'bg-[#1877F2]/90 border-blue-400/40'
             }`}
           >
-            <div className="flex items-center gap-1.5 min-w-0">
-              {toast.type === 'success' && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-200 shrink-0" />}
-              {toast.type === 'error' && <AlertCircle className="w-3.5 h-3.5 text-red-200 shrink-0" />}
-              {toast.type === 'info' && <Info className="w-3.5 h-3.5 text-blue-200 shrink-0" />}
+            <div className="flex items-center gap-2 min-w-0">
+              {toast.type === 'success' && <CheckCircle2 className="w-4 h-4 text-emerald-200 shrink-0" />}
+              {toast.type === 'error' && <AlertCircle className="w-4 h-4 text-red-200 shrink-0" />}
+              {toast.type === 'info' && <Info className="w-4 h-4 text-blue-200 shrink-0" />}
               <span className="truncate">{toast.message}</span>
             </div>
             <button
@@ -280,7 +280,7 @@ const AppContent: React.FC = () => {
               className="text-white/70 hover:text-white p-0.5 cursor-pointer shrink-0"
               aria-label="বন্ধ করুন"
             >
-              <X className="w-3 h-3" />
+              <X className="w-3.5 h-3.5" />
             </button>
           </div>
         ))}

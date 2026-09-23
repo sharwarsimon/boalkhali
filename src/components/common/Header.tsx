@@ -51,16 +51,16 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
         {/* 1. TOP BAR: Smooth Running Marquee Ticker (Scrolls away with page) */}
         <div 
           id="top-marquee-bar"
-          className="w-full bg-white text-black py-1.5 px-2 overflow-hidden border-b border-[#E4E6EB] select-none"
+          className="w-full bg-white text-black py-1.5 px-3 sm:px-6 lg:px-8 overflow-hidden border-b border-[#E4E6EB] select-none"
         >
-          <div className="max-w-5xl mx-auto flex items-center">
-            <div className="shrink-0 flex items-center gap-1.5 bg-red-600 text-white font-black text-[10px] sm:text-xs px-2.5 py-0.5 rounded-full uppercase shadow-2xs mr-2 z-10">
-              <Zap className="w-3 h-3 fill-current" />
+          <div className="max-w-7xl mx-auto flex items-center">
+            <div className="shrink-0 flex items-center gap-1.5 bg-red-600 text-white font-black text-xs px-2.5 py-0.5 rounded-full uppercase shadow-2xs mr-2.5 z-10">
+              <Zap className="w-3.5 h-3.5 fill-current" />
               <span>লাইভ আপডেট</span>
             </div>
 
             <div className="overflow-hidden whitespace-nowrap flex-1 relative flex">
-              <div className="animate-marquee text-xs font-semibold text-black tracking-wide flex items-center shrink-0">
+              <div className="animate-marquee text-xs sm:text-sm font-semibold text-black tracking-wide flex items-center shrink-0">
                 <div className="flex items-center shrink-0 text-black">
                   <span className="mx-4">🔥 বোয়ালখালী উপজেলা ডিজিটাল তথ্য ভাণ্ডার ও সেবা পোর্টালে আপনাকে স্বাগতম!</span>
                   <span className="mx-4">🚨 জরুরি মুহূর্তে জাতীয় হেল্পলাইন: ৯৯৯</span>
@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
         {/* 2. MAIN HEADER BAR (Scrolls away with page) */}
         <div 
           id="main-app-header"
-          className="max-w-5xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between gap-2 border-b border-[#E4E6EB]"
+          className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-3 border-b border-[#E4E6EB]"
         >
           {/* Left: Hamburger Menu + Logo */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -184,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
         role="navigation"
         aria-label="Main Sticky Navigation"
       >
-        <div className="max-w-5xl mx-auto px-1 sm:px-2 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 flex items-center justify-between">
           {navItems.map((item) => {
             const Icon = item.icon;
             return (
@@ -192,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                 key={item.path}
                 id={`nav-item-${item.label_en.toLowerCase()}`}
                 onClick={() => navigate(item.path)}
-                className={`flex-1 py-2 sm:py-2.5 md:py-3 px-0.5 flex flex-col items-center justify-center gap-0.5 sm:gap-1 relative transition-colors cursor-pointer group select-none min-w-0 ${
+                className={`flex-1 py-2 sm:py-2.5 md:py-3 px-0.5 sm:px-1 flex flex-col items-center justify-center gap-0.5 sm:gap-1 relative transition-colors cursor-pointer group select-none min-w-0 ${
                   item.isActive
                     ? 'text-[#1877F2]'
                     : 'text-[#65676B] hover:bg-[#F0F2F5] hover:text-[#050505]'
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
                   }`} 
                 />
                 
-                <span className={`text-[10px] sm:text-xs font-semibold leading-tight tracking-tight truncate max-w-full ${
+                <span className={`text-xs sm:text-sm font-semibold leading-tight tracking-tight truncate max-w-full ${
                   item.isActive ? 'font-bold text-[#1877F2]' : ''
                 }`}>
                   {item.label}

@@ -12,14 +12,14 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
 
   return (
     <footer className="hidden md:block bg-white text-[#65676B] border-t border-[#E4E6EB] mt-8">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Col 1: About */}
           <div className="space-y-2.5">
             <div className="cursor-pointer inline-block" onClick={() => navigate('/')}>
               <BoalkhaliLogo size="md" />
             </div>
-            <p className="text-xs text-[#65676B] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#65676B] leading-relaxed">
               {settings?.about_text ||
                 'Boalkhali.com হলো চট্টগ্রামের বোয়ালখালী উপজেলার স্থানীয় নাগরিক তথ্য, জরুরি সেবা, স্বাস্থ্য, অ্যাম্বুলেন্স, পরিবহন ও শপ ডিরেক্টরির সম্পূর্ণ ডিজিটাল প্ল্যাটফর্ম।'}
             </p>
@@ -27,16 +27,16 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
 
           {/* Col 2: Navigation Links */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#050505] mb-2.5">
+            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#050505] mb-2.5">
               গুরুত্বপূর্ণ বিভাগ
             </h4>
-            <ul className="space-y-1.5 text-xs">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <button
                   onClick={() => navigate('/upozila-info')}
                   className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <Landmark className="w-3.5 h-3.5 text-[#1877F2]" />
+                  <Landmark className="w-4 h-4 text-[#1877F2]" />
                   উপজেলা পরিচিতি ও ইউনিয়ন
                 </button>
               </li>
@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   onClick={() => navigate('/emergency-numbers')}
                   className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <PhoneCall className="w-3.5 h-3.5 text-[#1877F2]" />
+                  <PhoneCall className="w-4 h-4 text-[#1877F2]" />
                   জরুরি অ্যাম্বুলেন্স ও পুলিশ
                 </button>
               </li>
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   onClick={() => navigate('/jobs')}
                   className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <Briefcase className="w-3.5 h-3.5 text-[#1877F2]" />
+                  <Briefcase className="w-4 h-4 text-[#1877F2]" />
                   চাকরি ও ক্যারিয়ার
                 </button>
               </li>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   onClick={() => navigate('/shop')}
                   className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <Store className="w-3.5 h-3.5 text-[#1877F2]" />
+                  <Store className="w-4 h-4 text-[#1877F2]" />
                   বোয়ালখালী শপ ও মার্কেট
                 </button>
               </li>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
                   onClick={() => navigate('/chat')}
                   className="hover:text-[#1877F2] transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
                   লাইভ চ্যাট ও সহায়তা
                 </button>
               </li>
@@ -81,16 +81,16 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
 
           {/* Col 3: Contact */}
           <div className="space-y-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#050505] mb-2.5">
+            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#050505] mb-2.5">
               যোগাযোগ ও ঠিকানা
             </h4>
-            <div className="text-xs text-[#65676B] flex flex-col gap-1.5">
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#1877F2] shrink-0" />
+            <div className="text-xs sm:text-sm text-[#65676B] flex flex-col gap-2">
+              <span className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#1877F2] shrink-0" />
                 {settings?.address || 'বোয়ালখালী উপজেলা পরিষদ সংলগ্ন, চট্টগ্রাম'}
               </span>
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#1877F2] shrink-0" />
+              <span className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-[#1877F2] shrink-0" />
                 {settings?.contact_email || 'info@boalkhali.com'}
               </span>
             </div>
@@ -98,11 +98,11 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="pt-6 mt-6 border-t border-[#E4E6EB] flex flex-col sm:flex-row items-center justify-between text-xs text-[#65676B] gap-2">
+        <div className="pt-6 mt-6 border-t border-[#E4E6EB] flex flex-col sm:flex-row items-center justify-between text-xs sm:text-sm text-[#65676B] gap-2">
           <div>
             © {new Date().getFullYear()} Boalkhali.com • সর্বস্বত্ব সংরক্ষিত
           </div>
-          <div className="flex items-center gap-3 text-xs">
+          <div className="flex items-center gap-3 text-xs sm:text-sm">
             <button onClick={() => navigate('/adm/login')} className="hover:text-[#1877F2] transition-colors cursor-pointer">
               অ্যাডমিন পোর্টাল
             </button>

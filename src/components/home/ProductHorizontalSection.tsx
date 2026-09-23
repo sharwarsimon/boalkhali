@@ -70,11 +70,11 @@ export const ProductHorizontalSection: React.FC<ProductHorizontalSectionProps> =
             <IconComponent className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[2.2]" />
           </div>
           <div className="min-w-0">
-            <h2 className="text-sm sm:text-base font-bold text-[#050505] tracking-tight truncate">
+            <h2 className="text-base sm:text-lg font-bold text-[#050505] tracking-tight truncate">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-[10px] sm:text-[11px] text-[#65676B] truncate">
+              <p className="text-xs text-[#65676B] truncate">
                 {subtitle}
               </p>
             )}
@@ -86,28 +86,28 @@ export const ProductHorizontalSection: React.FC<ProductHorizontalSectionProps> =
           <div className="hidden sm:flex items-center gap-1 mr-1">
             <button
               onClick={() => scroll('left')}
-              className="w-6 h-6 rounded-full border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors cursor-pointer"
+              className="w-7 h-7 rounded-full border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors cursor-pointer"
               title="পূর্ববর্তী"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-3.5 h-3.5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-6 h-6 rounded-full border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors cursor-pointer"
+              className="w-7 h-7 rounded-full border border-gray-200 hover:bg-gray-100 flex items-center justify-center text-gray-600 transition-colors cursor-pointer"
               title="পরবর্তী"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
           <button
             onClick={() => navigate(`/products/${categoryId}`)}
-            className="text-[11px] sm:text-xs font-bold text-[#1877F2] hover:text-blue-700 flex items-center gap-0.5 cursor-pointer bg-blue-50 hover:bg-blue-100 px-2 sm:px-2.5 py-1 rounded-lg transition-all"
+            className="text-xs sm:text-sm font-bold text-[#1877F2] hover:text-blue-700 flex items-center gap-0.5 cursor-pointer bg-blue-50 hover:bg-blue-100 px-2.5 sm:px-3 py-1 rounded-lg transition-all"
           >
             <span>সব ({products.length})</span>
-            <ChevronRight className="w-3 h-3" />
+            <ChevronRight className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
@@ -148,18 +148,18 @@ export const ProductHorizontalSection: React.FC<ProductHorizontalSectionProps> =
                   )}
                 </div>
 
-                {/* Info (Reduced Text) */}
-                <div className="p-1.5 sm:p-2.5 space-y-1">
-                  <h3 className="font-semibold text-[11px] sm:text-xs text-[#050505] line-clamp-1 group-hover:text-[#1877F2] transition-colors leading-tight">
+                {/* Info */}
+                <div className="p-2 sm:p-3 space-y-1">
+                  <h3 className="font-semibold text-xs sm:text-sm text-[#050505] line-clamp-1 group-hover:text-[#1877F2] transition-colors leading-tight">
                     {product.name}
                   </h3>
 
                   <div className="flex items-baseline gap-1">
-                    <span className="text-xs sm:text-sm font-black text-[#1877F2]">
+                    <span className="text-sm sm:text-base font-black text-[#1877F2]">
                       ৳{product.price.toLocaleString('bn-BD')}
                     </span>
                     {product.originalPrice && (
-                      <span className="text-[9px] sm:text-[10px] text-gray-400 line-through">
+                      <span className="text-xs text-gray-400 line-through">
                         ৳{product.originalPrice.toLocaleString('bn-BD')}
                       </span>
                     )}
@@ -167,14 +167,14 @@ export const ProductHorizontalSection: React.FC<ProductHorizontalSectionProps> =
                 </div>
               </div>
 
-              {/* Action Button: Compact Add to Cart */}
-              <div className="p-1.5 sm:p-2 pt-0">
+              {/* Action Button: Add to Cart */}
+              <div className="p-2 sm:p-2.5 pt-0">
                 <button
                   onClick={(e) => handleAddToCart(e, product)}
-                  className="w-full py-1 sm:py-1.5 bg-blue-50 hover:bg-[#1877F2] text-[#1877F2] hover:text-white border border-blue-200 hover:border-transparent rounded-lg text-[10px] sm:text-xs font-bold flex items-center justify-center gap-1 transition-all shadow-2xs active:scale-95 cursor-pointer"
+                  className="w-full py-1.5 sm:py-2 bg-blue-50 hover:bg-[#1877F2] text-[#1877F2] hover:text-white border border-blue-200 hover:border-transparent rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-all shadow-2xs active:scale-95 cursor-pointer"
                   title="কার্টে যোগ করুন"
                 >
-                  <Plus className="w-3 h-3" />
+                  <Plus className="w-3.5 h-3.5" />
                   <span>কার্ট</span>
                 </button>
               </div>

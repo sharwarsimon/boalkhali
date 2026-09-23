@@ -81,28 +81,28 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ navigate, 
       <div className="bg-white rounded-2xl p-3 sm:p-4 border border-[#E4E6EB] shadow-2xs flex items-center justify-between gap-3">
         <button
           onClick={() => navigate('/numbers')}
-          className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#050505] hover:text-[#1877F2] transition-colors cursor-pointer bg-[#F0F2F5] hover:bg-[#E4E6EB] px-3 py-2 rounded-xl"
+          className="flex items-center gap-2 text-sm sm:text-base font-bold text-[#050505] hover:text-[#1877F2] transition-colors cursor-pointer bg-[#F0F2F5] hover:bg-[#E4E6EB] px-3.5 py-2 rounded-xl"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4.5 h-4.5" />
           <span>সকল নম্বর তালিকায় ফিরে যান</span>
         </button>
 
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-bold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-lg border border-orange-200">
+          <span className="text-xs sm:text-sm font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded-lg border border-orange-200">
             {sectionTitle}
           </span>
           <button
             onClick={handleShare}
-            className="p-2 rounded-xl bg-[#F0F2F5] hover:bg-[#E4E6EB] text-[#65676B] hover:text-[#050505] transition-colors cursor-pointer"
+            className="p-2 sm:p-2.5 rounded-xl bg-[#F0F2F5] hover:bg-[#E4E6EB] text-[#65676B] hover:text-[#050505] transition-colors cursor-pointer"
             title="শেয়ার করুন"
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-4.5 h-4.5" />
           </button>
         </div>
       </div>
 
       {/* 2. Service Hero Header */}
-      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#E4E6EB] shadow-2xs space-y-4">
+      <div className="bg-white rounded-3xl p-5 sm:p-6 md:p-7 border border-[#E4E6EB] shadow-2xs space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-4">
             <div className="shrink-0 p-1">
@@ -110,44 +110,44 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ navigate, 
             </div>
             <div className="space-y-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-xl sm:text-2xl font-extrabold text-[#050505] leading-tight">
+                <h1 className="text-2xl sm:text-3xl font-black text-[#050505] leading-tight">
                   {item.title}
                 </h1>
-                <span className="text-xs font-bold text-[#1877F2] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+                <span className="text-xs sm:text-sm font-bold text-[#1877F2] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                   {item.contacts.length} টি দায়িত্বপ্রাপ্ত নম্বর
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-[#65676B] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#65676B] leading-relaxed">
                 {item.description}
               </p>
             </div>
           </div>
 
           {/* Quick Search inside this service */}
-          <div className="relative w-full sm:w-72 shrink-0">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <div className="relative w-full sm:w-80 shrink-0">
+            <Search className="w-4.5 h-4.5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={filterQuery}
               onChange={(e) => setFilterQuery(e.target.value)}
               placeholder="কর্মকর্তা, পদবি বা এলাকা খুঁজুন..."
-              className="w-full pl-9 pr-3 py-2 bg-[#F0F2F5] border border-[#CED0D4] rounded-xl text-xs focus:bg-white focus:outline-[#1877F2] transition-colors"
+              className="w-full pl-10 pr-3.5 py-2.5 bg-[#F0F2F5] border border-[#CED0D4] rounded-xl text-sm focus:bg-white focus:outline-[#1877F2] transition-colors"
             />
           </div>
         </div>
 
         {/* 999 Helpline info strip for Emergency services */}
         {['police', 'fire-service', 'ambulance', 'hospital'].includes(item.id) && (
-          <div className="bg-red-50 border border-red-200 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between gap-3 text-xs">
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-3.5 sm:p-4 flex items-center justify-between gap-3 text-xs sm:text-sm">
             <div className="flex items-center gap-2.5 text-red-950">
-              <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+              <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
               <span>জরুরি পরিস্থিতিতে তাৎক্ষণিক জাতীয় হেল্পলাইন <strong>৯৯৯</strong> এ সরাসরি কল করতে পারেন।</span>
             </div>
             <a
               href="tel:999"
-              className="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl flex items-center gap-1 shrink-0 cursor-pointer shadow-2xs"
+              className="px-3.5 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl flex items-center gap-1.5 shrink-0 cursor-pointer shadow-2xs text-xs sm:text-sm"
             >
-              <Phone className="w-3.5 h-3.5 fill-current" />
+              <Phone className="w-4 h-4 fill-current" />
               <span>৯৯৯ কল</span>
             </a>
           </div>
@@ -218,63 +218,63 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ navigate, 
             {filteredContacts.map((contact, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-3 sm:p-3.5 border border-[#E4E6EB] hover:border-[#1877F2] shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3 group"
+                className="bg-white rounded-2xl p-3.5 sm:p-4 border border-[#E4E6EB] hover:border-[#1877F2] shadow-2xs hover:shadow-xs transition-all flex items-center justify-between gap-3 group"
               >
-                {/* Left: Round Image + Name & Number (same row) */}
-                <div className="flex items-center gap-3 min-w-0 flex-1">
+                {/* Left: Round Image + Name & Number */}
+                <div className="flex items-center gap-3.5 min-w-0 flex-1">
                   <img
                     src={contact.image || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80'}
                     alt={contact.label}
-                    className="w-12 h-12 rounded-full object-cover shrink-0 border border-gray-200 shadow-2xs group-hover:scale-105 transition-transform"
+                    className="w-13 h-13 sm:w-14 sm:h-14 rounded-full object-cover shrink-0 border border-gray-200 shadow-2xs group-hover:scale-105 transition-transform"
                     referrerPolicy="no-referrer"
                   />
                   <div className="min-w-0 flex-1 space-y-1">
-                    <h3 className="font-bold text-sm sm:text-base text-[#050505] leading-snug">
+                    <h3 className="font-bold text-base sm:text-lg text-[#050505] leading-snug">
                       {contact.label}
                     </h3>
                     {contact.designation && (
-                      <p className="text-xs text-[#65676B] leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#65676B] leading-relaxed">
                         {contact.designation}
                       </p>
                     )}
                     {contact.location && (
-                      <p className="text-[11px] text-[#65676B]">
+                      <p className="text-xs text-[#65676B]">
                         📍 {contact.location}
                       </p>
                     )}
                     {contact.note && (
-                      <p className="text-[11px] text-gray-500 italic">
+                      <p className="text-xs text-gray-500 italic">
                         {contact.note}
                       </p>
                     )}
                     {/* নাম্বারটি বর্ননার নিচে প্রদর্শন */}
-                    <div className="pt-0.5">
-                      <span className="font-mono font-bold text-xs sm:text-sm text-[#1877F2] bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-lg inline-block">
-                        {contact.phone}
+                    <div className="pt-1">
+                      <span className="font-mono font-bold text-sm sm:text-base text-[#1877F2] bg-blue-50 border border-blue-100 px-3 py-1 rounded-xl inline-flex items-center gap-1.5">
+                        📞 {contact.phone}
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Right: Copy & Call Buttons (same row) */}
-                <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   <button
                     onClick={() => handleCopy(contact.phone, contact.label)}
-                    className="p-2 sm:p-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl cursor-pointer transition-colors shadow-2xs"
+                    className="p-2.5 sm:p-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl cursor-pointer transition-colors shadow-2xs"
                     title="নম্বর কপি করুন"
                   >
                     {copiedPhone === contact.phone ? (
-                      <Check className="w-4 h-4 text-emerald-600" />
+                      <Check className="w-4.5 h-4.5 text-emerald-600" />
                     ) : (
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-4.5 h-4.5" />
                     )}
                   </button>
 
                   <a
                     href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}
-                    className="px-3.5 sm:px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center gap-1.5 shadow-2xs cursor-pointer transition-transform active:scale-95 shrink-0"
+                    className="px-4 sm:px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl flex items-center gap-1.5 shadow-2xs cursor-pointer transition-transform active:scale-95 shrink-0"
                   >
-                    <Phone className="w-3.5 h-3.5 fill-current" />
+                    <Phone className="w-4 h-4 fill-current" />
                     <span>কল</span>
                   </a>
                 </div>
